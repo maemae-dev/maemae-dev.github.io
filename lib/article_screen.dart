@@ -5,7 +5,6 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ArticleScreen extends HookWidget {
   const ArticleScreen(this.path);
-
   final String path;
 
   @override
