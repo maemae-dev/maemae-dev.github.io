@@ -61869,7 +61869,7 @@ C.c.cv(C.bt,C.du)
 return this.d}}
 F.EG.prototype={
 M:function(a,b){var s=null,r=B.PU($.ag5(),t.Sd),q=B.PU($.aol(),t.st),p=X.Ic(s,C.xp,B.ai6(X.Ic(C.a5,s,s).a5)),o=B.PU($.abR(),t.FM).a,n=X.Ic(C.B,s,s),m=C.kU.i(0,200)
-return new S.v3(q,r,"Flutter Demo",p,n.a40(B.ai6(X.Ic(C.B,s,s).a5),m),o,C.tT,s)}}
+return new S.v3(q,r,"Kazuma Maekawa",p,n.a40(B.ai6(X.Ic(C.B,s,s).a5),m),o,C.tT,s)}}
 Y.DJ.prototype={
 M:function(a,b){return new D.Ec(new Y.EH(null),new Y.IK(null),null)}}
 Y.IK.prototype={
