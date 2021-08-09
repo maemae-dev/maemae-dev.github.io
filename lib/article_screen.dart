@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/providers/aritcles_provider.dart';
 
 class ArticleScreen extends HookWidget {
   const ArticleScreen(this.path);
@@ -9,21 +11,15 @@ class ArticleScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = useState<String?>(null);
-
-    useEffect(() {
-      rootBundle
-          .loadString('articles/$path.md')
-          .then((value) => data.value = value);
-    }, []);
-
-    if (data.value == null) {
-      return const CircularProgressIndicator();
-    }
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Markdown(data: data.value!),
-    );
+    return useProvider(articlesProvider).when(
+        data: (data) {
+          final article = data.firstWhere((element) => element.path == path);
+          return Scaffold(
+            appBar: AppBar(),
+            body: Markdown(data: article.data!),
+          );
+        },
+        loading: () => const CircularProgressIndicator(),
+        error: (_, __) => const Scaffold());
   }
 }
