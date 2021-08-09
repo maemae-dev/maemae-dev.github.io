@@ -16,7 +16,7 @@ class MyApp extends HookWidget {
       locale: const Locale('ja'),
       routerDelegate: useProvider(routerDelegate),
       routeInformationParser: useProvider(parser),
-      title: 'Flutter Demo',
+      title: 'Kazuma Maekawa',
       theme: ThemeData(
         textTheme: GoogleFonts.robotoTextTheme(ThemeData.light().textTheme),
         primarySwatch: Colors.deepPurple,
