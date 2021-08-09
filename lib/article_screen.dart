@@ -10,6 +10,7 @@ class ArticleScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final data = useState<String?>(null);
+
     useEffect(() {
       rootBundle
           .loadString('articles/$path.md')
