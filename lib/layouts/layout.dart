@@ -1,7 +1,7 @@
 import 'package:breakpoint/breakpoint.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:portfolio/util/breakpoint.dart';
+import 'package:portfolio/hooks/use_breakpoint.dart';
 
 class Layout extends HookWidget {
   const Layout({
