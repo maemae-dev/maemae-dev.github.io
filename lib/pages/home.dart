@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/layout.dart';
 import 'package:portfolio/providers/aritcles_provider.dart';
-import 'package:portfolio/routes.dart';
 import 'package:portfolio/theme_switch.dart';
 import 'package:portfolio/util/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -132,43 +132,7 @@ class Profile extends HookWidget {
           ),
           articles.when(
               data: (articles) => Column(
-                    children: articles
-                        .map((e) => Row(
-                              children: [
-                                Flexible(
-                                  child: SizedBox(
-                                    width: 500,
-                                    child: Card(
-                                      child: InkWell(
-                                        onTap: () {
-                                          context
-                                              .read(routerDelegate)
-                                              .setArticleRoute(e.path);
-                                        },
-                                        child: Column(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(16.0),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    e.title,
-                                                    style: theme
-                                                        .textTheme.headline5,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ))
-                        .toList(),
+                    children: articles.map((a) => ArticleCard(a)).toList(),
                   ),
               loading: () => const CircularProgressIndicator(),
               error: (_, __) => Container()),
@@ -185,6 +149,48 @@ class Profile extends HookWidget {
           const SizedBox(height: 8),
         ],
       ),
+    );
+  }
+}
+
+class ArticleCard extends HookWidget {
+  const ArticleCard(this.article);
+  final Article article;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = useTheme();
+
+    return Row(
+      children: [
+        Flexible(
+          child: SizedBox(
+            width: 500,
+            child: Card(
+              child: InkWell(
+                onTap: () {
+                  context.go('/articles/${article.path}');
+                },
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            article.title,
+                            style: theme.textTheme.headline5,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

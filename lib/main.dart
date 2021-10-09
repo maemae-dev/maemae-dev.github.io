@@ -14,8 +14,8 @@ class MyApp extends HookWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       locale: const Locale('ja'),
-      routerDelegate: useProvider(routerDelegate),
-      routeInformationParser: useProvider(parser),
+      routerDelegate: useProvider(router).routerDelegate,
+      routeInformationParser: useProvider(router).routeInformationParser,
       title: 'Kazuma Maekawa',
       theme: ThemeData(
         textTheme: GoogleFonts.robotoTextTheme(ThemeData.light().textTheme),
