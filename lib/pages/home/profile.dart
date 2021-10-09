@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/components/article_card.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/hooks/use_theme.dart';
-import 'package:portfolio/components/article_card.dart';
 import 'package:portfolio/state/aritcles_provider.dart';
 
 class Profile extends HookWidget {
