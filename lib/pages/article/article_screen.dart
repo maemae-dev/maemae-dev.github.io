@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:portfolio/providers/aritcles_provider.dart';
+import 'package:portfolio/state/aritcles_provider.dart';
 
 class ArticleScreen extends HookWidget {
   const ArticleScreen(this.path);
