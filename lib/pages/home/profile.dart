@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/hooks/use_theme.dart';
-import 'package:portfolio/pages/home/article_card.dart';
+import 'package:portfolio/components/article_card.dart';
 import 'package:portfolio/state/aritcles_provider.dart';
 
 class Profile extends HookWidget {
@@ -51,7 +51,13 @@ class Profile extends HookWidget {
               data: (articles) => Column(
                     children: articles.map((a) => ArticleCard(a)).toList(),
                   ),
-              loading: () => const CircularProgressIndicator(),
+              loading: () => const Center(
+                    child: SizedBox(
+                      width: 50,
+                      height: 50,
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
               error: (_, __) => Container()),
           const SizedBox(height: 24),
           Row(

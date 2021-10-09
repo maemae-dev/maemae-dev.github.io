@@ -10,15 +10,22 @@ class ArticleScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return useProvider(articlesProvider).when(
+    return Scaffold(
+      appBar: AppBar(),
+      body: useProvider(articlesProvider).when(
         data: (data) {
           final article = data.firstWhere((element) => element.path == path);
-          return Scaffold(
-            appBar: AppBar(),
-            body: Markdown(data: article.data!),
-          );
+          return Markdown(data: article.data!);
         },
-        loading: () => const CircularProgressIndicator(),
-        error: (_, __) => const Scaffold());
+        loading: () => const Center(
+          child: SizedBox(
+            width: 50,
+            height: 50,
+            child: CircularProgressIndicator(),
+          ),
+        ),
+        error: (_, __) => Container(),
+      ),
+    );
   }
 }
