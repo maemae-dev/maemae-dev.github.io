@@ -5,7 +5,7 @@ import 'package:portfolio/entities/article.dart';
 import 'package:portfolio/hooks/use_theme.dart';
 
 class ArticleCard extends HookWidget {
-  const ArticleCard(this.article);
+  const ArticleCard(this.article, {Key? key}) : super(key: key);
   final Article article;
 
   @override

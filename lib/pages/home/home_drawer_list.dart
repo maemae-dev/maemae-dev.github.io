@@ -4,6 +4,7 @@ import 'package:portfolio/components/theme_switch.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeDrawerList extends StatelessWidget {
+  const HomeDrawerList({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,10 +31,10 @@ class HomeDrawerList extends StatelessWidget {
             ),
           ),
           const Divider(height: 1, thickness: 1),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: ListTile(
-              title: const Text('Switch Theme'),
+              title: Text('Switch Theme'),
               trailing: ThemeSwitch(),
             ),
           ),

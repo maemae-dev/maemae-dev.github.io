@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/state/aritcles.dart';
 
 class ArticleScreen extends HookWidget {
-  const ArticleScreen(this.path);
+  const ArticleScreen(this.path, {Key? key}) : super(key: key);
   final String path;
 
   @override

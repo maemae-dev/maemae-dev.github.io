@@ -10,11 +10,13 @@ class Layout extends HookWidget {
     Widget? medium,
     Widget? large,
     Widget? xlarge,
+    Key? key,
   })  : handsetFirst = true,
         _layout1 = xlarge,
         _layout2 = large,
         _layout3 = medium,
-        _layout4 = small;
+        _layout4 = small,
+        super(key: key);
 
   const Layout.desktopFirst({
     required this.defaultLayout,
@@ -22,11 +24,13 @@ class Layout extends HookWidget {
     Widget? medium,
     Widget? small,
     Widget? xsmall,
+    Key? key,
   })  : handsetFirst = false,
         _layout1 = large,
         _layout2 = medium,
         _layout3 = small,
-        _layout4 = xsmall;
+        _layout4 = xsmall,
+        super(key: key);
 
   final Widget defaultLayout;
   final Widget? _layout1;

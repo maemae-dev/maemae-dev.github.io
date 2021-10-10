@@ -29,7 +29,9 @@ class DrawerLayout extends StatelessWidget {
 }
 
 class WideLayout extends HookWidget {
-  const WideLayout({required this.main, required this.drawer, this.appBar});
+  const WideLayout(
+      {required this.main, required this.drawer, this.appBar, Key? key})
+      : super(key: key);
 
   final Widget drawer;
   final Widget main;
@@ -58,7 +60,9 @@ class WideLayout extends HookWidget {
 }
 
 class NarrowLayout extends HookWidget {
-  const NarrowLayout({required this.main, required this.drawer, this.appBar});
+  const NarrowLayout(
+      {required this.main, required this.drawer, this.appBar, Key? key})
+      : super(key: key);
 
   final Widget drawer;
   final Widget main;

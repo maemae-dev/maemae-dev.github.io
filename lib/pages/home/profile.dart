@@ -7,6 +7,7 @@ import 'package:portfolio/hooks/use_theme.dart';
 import 'package:portfolio/state/aritcles.dart';
 
 class Profile extends HookWidget {
+  const Profile({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final theme = useTheme();

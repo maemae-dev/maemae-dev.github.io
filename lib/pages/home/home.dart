@@ -5,10 +5,10 @@ import 'package:portfolio/pages/home/home_drawer_list.dart';
 import 'package:portfolio/pages/home/profile.dart';
 
 class Home extends HookWidget {
-  const Home();
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return DrawerLayout(main: Profile(), drawer: HomeDrawerList());
+    return const DrawerLayout(main: Profile(), drawer: HomeDrawerList());
   }
 }

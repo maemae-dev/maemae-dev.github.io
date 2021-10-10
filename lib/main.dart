@@ -9,10 +9,11 @@ import 'package:portfolio/state/theme_mode_provider.dart';
 void main() {
   GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
 
-  runApp(ProviderScope(child: MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends HookWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
